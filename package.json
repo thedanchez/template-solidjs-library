@@ -1,0 +1,82 @@
+{
+  "name": "template-solidjs-library",
+  "version": "0.0.0",
+  "description": "Template for SolidJS library using tsup for bundling. Configured with Bun, NVM, TypeScript, ESLint, Prettier, Vitest, and GHA",
+  "homepage": "https://github.com/thedanchez/template-solidjs-library#readme",
+  "bugs": {
+    "url": "https://github.com/thedanchez/template-solidjs-library/issues"
+  },
+  "license": "MIT",
+  "author": "Daniel Sanchez <dsanc89@icloud.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thedanchez/template-solidjs-library.git"
+  },
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "browser": {},
+  "types": "./dist/index.d.ts",
+  "typesVersions": {},
+  "exports": {
+    "solid": "./dist/index.jsx",
+    "import": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsup",
+    "build:watch": "tsup --watch",
+    "dev": "vite",
+    "format": "oxfmt --check",
+    "format:fix": "oxfmt",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "pkg:changeset": "changeset",
+    "pkg:version": "changeset version",
+    "pkg:publish": "bun run build && changeset publish",
+    "serve": "vite preview",
+    "start": "vite",
+    "start:server": "bun run server/index.ts",
+    "test": "vitest run",
+    "test:cov": "vitest run --coverage",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.30.0",
+    "@solidjs/router": "^0.16.1",
+    "@solidjs/testing-library": "^0.8.10",
+    "@tailwindcss/vite": "^4.2.2",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@types/bun": "^1.3.11",
+    "@typescript-eslint/eslint-plugin": "^8.57.2",
+    "@typescript-eslint/parser": "^8.57.2",
+    "@vitest/coverage-istanbul": "^4.1.1",
+    "eslint": "^10.1.0",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "eslint-plugin-solid": "^0.14.5",
+    "globals": "^17.4.0",
+    "jiti": "^2.6.1",
+    "jsdom": "^29.0.1",
+    "oxfmt": "^0.41.0",
+    "solid-js": "^1.9.11",
+    "tailwindcss": "^4.2.2",
+    "tsup": "^8.5.1",
+    "tsup-preset-solid": "^2.2.0",
+    "typescript": "^6.0.2",
+    "typescript-eslint": "^8.57.2",
+    "vite": "^8.0.2",
+    "vite-plugin-solid": "^2.11.11",
+    "vitest": "^4.1.1"
+  },
+  "peerDependencies": {
+    "solid-js": ">=1.6.0"
+  }
+}
